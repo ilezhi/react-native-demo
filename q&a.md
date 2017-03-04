@@ -8,3 +8,7 @@
 
 ### 如何隐藏页面顶部状态栏
 使用组件`StatusBar` 将`hidden`属性设置为`true`即可
+
+
+### 二级页面如何隐藏tabbar
+在使用tabbar最外层定义navigator, 之后的push,都会推入新的component

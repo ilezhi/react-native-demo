@@ -80,9 +80,14 @@ export default class JobList extends Component {
     }
   }
 
+  goJobDetail(job) {
+    console.log('click', job.id);
+    this.props.onJobDetail(job);
+  }
+
 
   _renderJob(job) {
-    return (<JobItem job={job} />);
+    return (<JobItem job={job} onSelectJob={this.goJobDetail.bind(this, job)} />);
   }
 
   render() {
@@ -90,7 +95,7 @@ export default class JobList extends Component {
       <View style={styles.wrapper}>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={this._renderJob}/>
+          renderRow={this._renderJob.bind(this)}/>
       </View>
     );
   }

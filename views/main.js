@@ -9,10 +9,10 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import Home from '../route/routehome';
-import Message from '../route/routemessage';
-import Topic from '../route/routetopic';
-import Profile from '../route/routeprofile';
+import Home from './home';
+import Message from './message';
+import Topic from './topic';
+import Profile from './profile';
 
 const HOME_TAB = 'homeTab';
 const MESSAGE_TAB = 'messageTab';
@@ -40,16 +40,16 @@ export default class MainPage extends Component {
     let page;
     switch(pageName) {
       case HOME_TAB:
-        page = <Home />;
+        page = <Home {...this.props} />;
         break;
       case MESSAGE_TAB:
-        page = <Message />;
+        page = <Message {...this.props} />;
         break;
       case TOPIC_TAB:
-        page = <Topic />;
+        page = <Topic {...this.props} />;
         break;
       default:
-        page = <Profile />;
+        page = <Profile {...this.props} />;
         break;
     }
 

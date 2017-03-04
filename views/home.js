@@ -14,6 +14,7 @@ import SearchBar from './common/searchbar';
 import Banner from './common/banner';
 import RecommendJob from './job/recommend';
 import JobList from './job/joblist';
+import JobDetail from './job/jobdetail';
 
 const IMG_URI = ['../imgs/splash.png', '../imgs/splash.png', '../imgs/splash.png'];
 
@@ -45,6 +46,20 @@ export default class Home extends Component {
 
   }
 
+
+  goJobDetail(job) {
+    const { navigator } = this.props;
+    if(navigator) {
+			navigator.push({
+				name: 'JobDeail',
+				component: JobDetail,
+				params: {
+					job: job
+				}
+			});
+		}
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -56,7 +71,7 @@ export default class Home extends Component {
           <LoopImg />
           <Banner />
           <RecommendJob />
-          <JobList />
+          <JobList onJobDetail={this.goJobDetail.bind(this)} />
         </ScrollView>
       </View>
     );
