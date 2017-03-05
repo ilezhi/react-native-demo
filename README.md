@@ -21,3 +21,8 @@ mac用户需要安装xcode
 ```
 $ react-native run-ios
 ```
+
+
+###效果图
+
+![img](https://github.com/myTurn2015/react-native-demo/blob/master/RNdemo.gif)
